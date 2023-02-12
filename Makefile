@@ -23,7 +23,10 @@ RM		= rm -f
 
 all: $(NAME)
 
-$(BINDIR)/%.o: $(SRCDIR)/%.c
+$(BINDIR):
+	mkdir bin
+
+$(BINDIR)/%.o: $(SRCDIR)/%.c $(BINDIR)
 	$(CC) -c $< -o $@
 
 $(NAME): $(OBJS) $(LDIR)$(LIBFT)
