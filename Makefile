@@ -21,24 +21,30 @@ CFLAGS	=	-Wextra -Werror -Wall
 
 RM		= rm -f
 
-all: $(NAME)
+all: libft $(BINDIR) $(NAME)
 
 $(BINDIR):
 	mkdir bin
 
-$(BINDIR)/%.o: $(SRCDIR)/%.c $(BINDIR)
+$(BINDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) -c $< -o $@
 
-$(NAME): $(OBJS) $(LDIR)$(LIBFT)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDIR)$(LIBFT) -o $(NAME)
 
-$(LDIR)$(LIBFT):
+libft:
 	$(MAKE) -C $(LDIR)
 
 clean:
 	$(RM) $(OBJS)
+	$(RM)r $(BINDIR)
+	$(MAKE) -C $(LDIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
+	$(MAKE) -C $(LDIR) fclean
 
 re: fclean all
+	$(MAKE) -C $(LDIR) re
+
+.PHONY: all libft
