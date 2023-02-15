@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:38:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/14 15:12:10 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/15 11:11:25 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,7 @@ static int	nb_double(int argc, char **argv)
 	int	i;
 	int	i2;
 
-	tmp = (int *)malloc(argc * sizeof(int));
-	if (!tmp)
-		return (1);
-	i = -1;
-	while (++i < argc - 1)
-		tmp[i] = ft_atoi(argv[i + 1]);
+	tmp = temp_array(argc, argv);
 	while (i >= 0)
 	{
 		i2 = i - 1;

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 13:37:34 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 11:05:53 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/02/15 11:09:02 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/02/15 11:18:48 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	*ft_free(void *ptr)
 {
-	if (input_error(argc, argv))
-		return (ft_putstr_fd("Error\n", 2), 0);
-	if (init_push_swap(argc, argv))
-		return (ft_putstr_fd("Error\n", 2), 0);
-	return (0);
+	if (ptr)
+		free(ptr)
+	return (NULL);
+}
+
+int	*temp_array(int argc, char **argv)
+{
+	int	*tmp;
+	
+	tmp = (int *)ft_calloc(argc, sizeof(int));
+	if (!tmp)
+		return (NULL);
+	i = -1;
+	while (++i < argc - 1)
+		tmp[i] = ft_atoi(argv[i + 1]);
+	return (tmp);
 }
