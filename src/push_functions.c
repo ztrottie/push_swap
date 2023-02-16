@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 18:43:02 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:26:13 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ void	pb(t_structs **piles)
 		std_push(&(*piles)->a, &(*piles)->b);
 	(*piles)->b_count++;
 	(*piles)->a_count--;
-	ft_printf("pa\n");
+	ft_printf("pb\n");
 }

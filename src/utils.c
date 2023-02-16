@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:09:02 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 14:29:08 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/16 10:26:22 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,29 @@ void	*ft_free(void *ptr)
 	if (ptr)
 		free(ptr);
 	return (NULL);
+}
+
+size_t	ft_word_count(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+	int		trigger;
+
+	i = 0;
+	trigger = 1;
+	count = 0;
+	while (i <= ft_strlen(s))
+	{
+		if ((s[i] == c || s[i] == 0) && trigger == 0)
+		{
+			count++;
+			trigger = 1;
+		}
+		else if (s[i] != c && trigger == 1)
+			trigger = 0;
+		i++;
+	}
+	return (count + 1);
 }
 
 int	sort_checker(t_pile **a)
@@ -38,12 +61,12 @@ int	*temp_array(int argc, char **argv)
 	int	*tmp;
 	int	i;
 	
-	tmp = (int *)ft_calloc(argc, sizeof(int));
+	tmp = (int *)ft_calloc(argc + 1, sizeof(int));
 	if (!tmp)
 		return (NULL);
 	i = -1;
-	while (++i < argc - 1)
-		tmp[i] = ft_atoi(argv[i + 1]);
+	while (++i < argc)
+		tmp[i] = ft_atoi(argv[i]);
 	return (tmp);
 }
 

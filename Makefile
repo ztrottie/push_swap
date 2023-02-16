@@ -13,7 +13,8 @@ SRCS = src/push_swap.c \
 	   src/init_push_swap.c \
 	   src/pile_functions.c \
 	   src/utils.c \
-	   src/xs_algo.c
+	   src/xs_algo.c \
+	   src/argv_converter.c
 
 OBJS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%.o, $(SRCS))
 

@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 18:54:18 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:22:40 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ static t_pile	*init_a(int argc, char **argv)
 		return (free(tmp), NULL);
 	a->next = a;
 	a->prev = a;
-	a->data = index_nb(tmp, 0, argc - 1);
+	a->data = index_nb(tmp, 0, argc);
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
-		if (pile_add_end(index_nb(tmp, i, argc - 1), &a))
+		if (pile_add_end(index_nb(tmp, i, argc), &a))
 			return (free_pile(a), free(tmp), NULL);
 		i++;
 	}

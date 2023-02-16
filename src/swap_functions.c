@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:52:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 15:52:07 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:58:40 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 static void	std_swap(t_pile **a)
 {
 	t_pile	*head;
+	t_pile	*ptr;
 
+	ptr = (*a);
 	head = (*a)->next;
-	head->prev = (*a)->prev;
+	head->prev = ptr->prev;
+	ptr->next = head->next;
+	head->next = ptr;
+	ptr->prev = head;
+	ptr->next->prev = ptr;
 	head->prev->next = head;
-	head->next = (*a);
-	(*a)->prev = head;
-	(*a)->next = (*a)->next->next;
-	(*a)->next->prev = (*a);
 	(*a) = head;
 }
 

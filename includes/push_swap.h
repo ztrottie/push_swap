@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 18:59:29 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:09:51 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,14 @@ int			input_error(int argc, char **argv);
 int			init_push_swap(int argc, char **argv, t_structs **piles);
 
 /*type of algos*/
-void	xs_algo(t_structs **piles);
+void		xs_algo(t_structs **piles);
+void		three_sort_a(t_structs **piles);
+void		three_sort_b(t_structs **piles);
+void		two_sort_a(t_structs **piles);
+void		two_sort_b(t_structs **piles);
+
+/*argv convertion*/
+char		**argv_conv(int *argc, char **argv);
 /*Pile functions*/
 int			pile_add_end(int data, t_pile **pile);
 void		free_pile(t_pile *pile);
@@ -75,5 +82,6 @@ long int	ft_li_atoi(const char *str);
 int			*temp_array(int argc, char **argv);
 void		*ft_free(void *ptr);
 int			sort_checker(t_pile **a);
+size_t		ft_word_count(char const *s, char c);
 
 #endif
