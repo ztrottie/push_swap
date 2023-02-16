@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:38:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 11:11:25 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:10:46 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,19 @@ static int	nb_double(int argc, char **argv)
 	int	i2;
 
 	tmp = temp_array(argc, argv);
-	while (i >= 0)
+	if (tmp == NULL)
+		return (1);
+	i = 0;
+	while (i < argc - 1)
 	{
-		i2 = i - 1;
-		while (i2 >= 0)
+		i2 = i + 1;
+		while (i2 < argc - 1)
 		{
 			if (tmp[i] == tmp [i2])
 				return (free(tmp), 1);
-			i2--;
+			i2++;
 		}
-		i--;
+		i++;
 	}
 	return (free(tmp), 0);
 }

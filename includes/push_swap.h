@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 11:57:59 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:59:29 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct s_structs
 
 
 /*Swap functions*/
-void		sa(t_pile **a, int print);
-void		sb(t_pile **b, int print);
-void		ss(t_pile **a, t_pile **b);
+void		sa(t_pile **a, int count, int print);
+void		sb(t_pile **b, int count, int print);
+void		ss(t_structs **piles);
 
 /*Rotation functions*/
 void		ra(t_pile **a, int print);
@@ -54,21 +54,26 @@ void		rrb(t_pile **b, int print);
 void		rrr(t_pile **a, t_pile **b);
 
 /*Push functions*/
-t_structs	*pa(t_structs *piles);
-t_structs	*pb(t_structs *piles);
+void		pa(t_structs **piles);
+void		pb(t_structs **piles);
 
 /*Error handling functions*/
 int			input_error(int argc, char **argv);
 
 /*Initialization of all the structs and indexation of numbers*/
-int			init_push_swap(int argc, char **argv, t_structs *piles);
+int			init_push_swap(int argc, char **argv, t_structs **piles);
 
+/*type of algos*/
+void	xs_algo(t_structs **piles);
 /*Pile functions*/
-void		pile_add_end(t_pile **pile, int data);
+int			pile_add_end(int data, t_pile **pile);
+void		free_pile(t_pile *pile);
+void		*free_all(t_structs *piles);
 
 /*Other functions*/
 long int	ft_li_atoi(const char *str);
 int			*temp_array(int argc, char **argv);
 void		*ft_free(void *ptr);
+int			sort_checker(t_pile **a);
 
 #endif

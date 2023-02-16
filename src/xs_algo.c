@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_li_atoi.c                                       :+:      :+:    :+:   */
+/*   xs_algo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 15:31:02 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/12 15:34:31 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/02/15 16:56:59 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/02/15 20:05:41 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-long int	ft_li_atoi(const char *str)
+void	xs_algo(t_structs **piles)
 {
-	long int	nb;
-	int	sign;
-	int	i;
-
-	nb = 0;
-	i = 0;
-	sign = 1;
-	if (str[i] && (str[i] == '-' || str[i] == '+'))
+	while ((*piles)->a_count > 3)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		if ((*piles)->a->data <= 3)
+			pb(piles);
+		else
+			ra(&(*piles)->a, 1);
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		nb *= 10;
-		nb += str[i] - 48;
-		i++;
-	}
-	return (nb * sign);
 }

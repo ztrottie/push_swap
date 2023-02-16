@@ -10,7 +10,10 @@ SRCS = src/push_swap.c \
 	   src/reverse_rotation_functions.c \
 	   src/push_functions.c \
 	   src/input_error.c \
-	   src/ft_li_atoi.c
+	   src/init_push_swap.c \
+	   src/pile_functions.c \
+	   src/utils.c \
+	   src/xs_algo.c
 
 OBJS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%.o, $(SRCS))
 
@@ -45,6 +48,11 @@ fclean: clean
 	$(MAKE) -C $(LDIR) fclean
 
 re: fclean all
-	$(MAKE) -C $(LDIR) re
+
+visu:
+	./push_swap_visualizer/build/bin/visualizer
+
+val:
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./push_swap 4 3 2 1
 
 .PHONY: all libft
