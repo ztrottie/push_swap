@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 11:09:51 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:47:21 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_structs
 	int	total_count;
 	int	a_count;
 	int	b_count;
+	int	block_sizes;
 	t_pile *a;
 	t_pile *b;
 }	t_structs;
@@ -65,6 +66,9 @@ int			init_push_swap(int argc, char **argv, t_structs **piles);
 
 /*type of algos*/
 void		xs_algo(t_structs **piles);
+void		ultimate_sort(t_structs **piles);
+
+/*Sort commands*/
 void		three_sort_a(t_structs **piles);
 void		three_sort_b(t_structs **piles);
 void		two_sort_a(t_structs **piles);

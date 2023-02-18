@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotation_functions.c                       :+:      :+:    :+:   */
+/*   ultimate_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:37:45 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/18 11:35:54 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/02/18 13:26:26 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/02/18 13:52:07 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
-/*Rotate downwards the pile a*/
-void	rra(t_pile **a, int print)
+static void	block_separation()
 {
-	*a = (*a)->prev;
-	if (print)
-		ft_printf("rra\n");
+	
 }
 
-/*Rotate downwards the pile b*/
-void	rrb(t_pile **b, int print)
+void	ultimate_sort(t_structs **piles)
 {
-	*b = (*b)->prev;
-	if (print)
-		ft_printf("rrb\n");
-}
+	(*piles)->block_sizes = (*piles)->total_count * 20 / 100;
 
-/*Rotate downwards the piles a and b*/
-void	rrr(t_pile **a, t_pile **b)
-{
-	rra(a, 0);
-	rrb(b, 0);
-	ft_printf("rrr\n");
 }

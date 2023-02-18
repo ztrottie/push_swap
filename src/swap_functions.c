@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:52:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 11:58:40 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:37:01 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sa(t_pile **a, int count, int print)
 	else
 		ra(a, 0);
 	if (print)
-		printf("sa\n");
+		ft_printf("sa\n");
 }
 
 /*Swap the 2 first elements of the pile b*/
@@ -52,7 +52,7 @@ void	sb(t_pile **b, int count, int print)
 	else
 		rb(b, 0);
 	if (print)
-		printf("sb\n");
+		ft_printf("sb\n");
 }
 
 /*Swap the 2 first elements of the piles a and b*/
@@ -60,5 +60,5 @@ void	ss(t_structs **piles)
 {
 	sa(&(*piles)->a, (*piles)->a_count, 0);
 	sa(&(*piles)->b, (*piles)->b_count, 0);
-	printf("ss\n");
+	ft_printf("ss\n");
 }
