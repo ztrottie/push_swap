@@ -16,7 +16,8 @@ SRCS = src/push_swap.c \
 	   src/xs_algo.c \
 	   src/argv_converter.c \
 	   src/basic_sort_commands.c \
-	   src/ultimate_sort.c
+	   src/ultimate_sort.c \
+	   src/block_manipulation.c
 
 OBJS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%.o, $(SRCS))
 

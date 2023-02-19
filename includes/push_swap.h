@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/18 13:47:21 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:13:24 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
+# define DEPTH_SEARCH 1
 
 # include "../libft/libft.h"
 # include <stdio.h>
@@ -23,6 +24,7 @@
 typedef struct s_pile
 {
 	int				data;
+	int				block;
 	struct s_pile*	prev;
 	struct s_pile*	next;
 }	t_pile;
@@ -30,12 +32,14 @@ typedef struct s_pile
 /*structure of everything needed*/
 typedef struct s_structs
 {
-	int	total_count;
-	int	a_count;
-	int	b_count;
-	int	block_sizes;
-	t_pile *a;
-	t_pile *b;
+	int		total_count;
+	int		a_count;
+	int		b_count;
+	float	block_sizes;
+	int		*nb_block_a;
+	int		*nb_block_b;
+	t_pile 	*a;
+	t_pile 	*b;
 }	t_structs;
 
 
@@ -76,10 +80,17 @@ void		two_sort_b(t_structs **piles);
 
 /*argv convertion*/
 char		**argv_conv(int *argc, char **argv);
+
 /*Pile functions*/
 int			pile_add_end(int data, t_pile **pile);
 void		free_pile(t_pile *pile);
 void		*free_all(t_structs *piles);
+
+/*Block Manipulation*/
+void		block_sep(t_structs **piles, int block);
+int			block_alloc(t_structs **piles);
+void		block_init(t_structs **piles);
+
 
 /*Other functions*/
 long int	ft_li_atoi(const char *str);

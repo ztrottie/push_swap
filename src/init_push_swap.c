@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 11:22:40 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:53:33 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static t_pile	*init_a(int argc, char **argv)
 	tmp = temp_array(argc, argv);
 	if (!tmp)
 		return (NULL);
-	a = (t_pile *)malloc(sizeof(t_pile));
+	a = (t_pile *)ft_calloc(1, sizeof(t_pile));
 	if (!a)
 		return (free(tmp), NULL);
 	a->next = a;

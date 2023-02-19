@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 11:26:13 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:18:30 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,15 @@ void	pa(t_structs **piles)
 }
 
 /*send the first element of a on top of b*/
-void	pb(t_structs **piles)
+void	pb(t_structs *piles)
 {
-	if ((*piles)->b_count == 0)
-		empty_push(&(*piles)->a, &(*piles)->b);
-	else if ((*piles)->a_count == 1)
-		last_push(&(*piles)->a, &(*piles)->b);
+	if ((piles)->b_count == 0)
+		empty_push(&(piles)->a, &(piles)->b);
+	else if ((piles)->a_count == 1)
+		last_push(&(piles)->a, &(piles)->b);
 	else
-		std_push(&(*piles)->a, &(*piles)->b);
-	(*piles)->b_count++;
-	(*piles)->a_count--;
+		std_push(&(piles)->a, &(piles)->b);
+	(piles)->b_count++;
+	(piles)->a_count--;
 	ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:56:32 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/15 17:56:32 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:53:59 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	pile_add_end(int data, t_pile **pile)
 {
 	t_pile	*new;
 
-	new = (t_pile *)malloc(sizeof(t_pile));
+	new = (t_pile *)ft_calloc(1, sizeof(t_pile));
 	if (!new)
 		return (1);
 	new->data = data;
