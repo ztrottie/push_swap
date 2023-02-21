@@ -31,32 +31,32 @@ RM		= rm -f
 all: libft $(BINDIR) $(NAME)
 
 $(BINDIR):
-	mkdir bin
+	@mkdir bin
 
 $(BINDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LDIR)$(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LDIR)$(LIBFT) -o $(NAME)
 
 libft:
-	$(MAKE) -C $(LDIR)
+	@$(MAKE) -C $(LDIR)
 
 clean:
-	$(RM) $(OBJS)
-	$(RM)r $(BINDIR)
-	$(MAKE) -C $(LDIR) clean
+	@$(RM) $(OBJS)
+	@$(RM)r $(BINDIR)
+	@$(MAKE) -C $(LDIR) clean
 
 fclean: clean
-	$(RM) $(NAME)
-	$(MAKE) -C $(LDIR) fclean
+	@$(RM) $(NAME)
+	@$(MAKE) -C $(LDIR) fclean
 
 re: fclean all
 
 visu:
-	./push_swap_visualizer/build/bin/visualizer
+	@./push_swap_visualizer/build/bin/visualizer
 
 val:
-	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./push_swap 4 3 2 1
+	@valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./push_swap 75 59 94 70 1 46 48 24 47 19 90 20 81 72 12 43 55 50 60 41 49 32 69 7 85 83 39 52 5 96 99 98 71 42 65 91 54 56 82 95 73 97 28 11 62 87 17 25 2 67 77 4 36 14 30 80 34 88 76 79 22 45 89 13 33 86 29 18 74 66 51 3 57 58 61 35 100 16 92 53 27 21 26 93 68 44 78 31 6 64 10 9 37 84 23 40 15 63 8 38
 
 .PHONY: all libft

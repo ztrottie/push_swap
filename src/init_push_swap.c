@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/19 09:53:33 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/20 09:41:48 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ static t_pile	*init_a(int argc, char **argv)
 	return (free(tmp), a);
 }
 
-int	init_push_swap(int argc, char **argv, t_structs **piles)
+int	init_push_swap(int argc, char **argv, t_structs *piles)
 {
-	(*piles)->a = init_a(argc, argv);
-	if (!(*piles)->a)
+	piles->a = init_a(argc, argv);
+	if (!piles->a)
 		return (1);
-	(*piles)->b = NULL;
+	piles->b = NULL;
 	return (0);
 }

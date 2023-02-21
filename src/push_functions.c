@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/19 18:18:30 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:26:12 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,42 +47,41 @@ static void	empty_push(t_pile **a, t_pile **b)
 
 static void	last_push(t_pile **a, t_pile **b)
 {
-	t_pile	*head_a;
 	t_pile	*head_b;
 
 	head_b = (*a);
 	head_b->next = (*b);
-	head_b->next->prev = head_b;
 	head_b->prev = (*b)->prev;
+	head_b->next->prev = head_b;
 	head_b->prev->next = head_b;
 	(*a) = NULL;
 	(*b) = head_b;
 }
 
 /*send the first element of b on top of a*/
-void	pa(t_structs **piles)
+void	pa(t_structs *piles)
 {
-	if ((*piles)->a_count == 0)
-		empty_push(&(*piles)->b, &(*piles)->a);
-	else if ((*piles)->b_count == 1)
-		last_push(&(*piles)->b, &(*piles)->a);
+	if (piles->a_count == 0)
+		empty_push(&piles->b, &piles->a);
+	else if (piles->b_count == 1)
+		last_push(&piles->b, &piles->a);
 	else
-		std_push(&(*piles)->b, &(*piles)->a);
-	(*piles)->a_count++;
-	(*piles)->b_count--;
+		std_push(&piles->b, &piles->a);
+	piles->a_count++;
+	piles->b_count--;
 	ft_printf("pa\n");
 }
 
 /*send the first element of a on top of b*/
 void	pb(t_structs *piles)
 {
-	if ((piles)->b_count == 0)
-		empty_push(&(piles)->a, &(piles)->b);
-	else if ((piles)->a_count == 1)
-		last_push(&(piles)->a, &(piles)->b);
+	if (piles->b_count == 0)
+		empty_push(&piles->a, &piles->b);
+	else if (piles->a_count == 1)
+		last_push(&piles->a, &piles->b);
 	else
-		std_push(&(piles)->a, &(piles)->b);
-	(piles)->b_count++;
-	(piles)->a_count--;
+		std_push(&piles->a, &piles->b);
+	piles->b_count++;
+	piles->a_count--;
 	ft_printf("pb\n");
 }
