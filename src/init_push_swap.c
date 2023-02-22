@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/20 09:41:48 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:37:38 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	index_nb(int *array, int index, int len)
 {
-	int count;
+	int	count;
 	int	i;
 
 	i = 0;

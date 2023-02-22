@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:56:32 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/19 09:53:59 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:38:35 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	free_pile(t_pile *pile)
 	t_pile	*tmp;
 
 	ptr = pile;
-	while(ptr->next != pile)
+	while (ptr->next != pile)
 	{
 		tmp = ptr->next;
 		free(ptr);

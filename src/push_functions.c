@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/21 17:26:12 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:01:13 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	empty_push(t_pile **a, t_pile **b)
 {
 	t_pile	*head_a;
 	t_pile	*head_b;
-	
+
 	head_a = (*a)->next;
 	head_a->prev = (*a)->prev;
 	head_a->prev->next = head_a;
@@ -59,7 +59,7 @@ static void	last_push(t_pile **a, t_pile **b)
 }
 
 /*send the first element of b on top of a*/
-void	pa(t_structs *piles)
+void	pa(t_structs *piles, int print)
 {
 	if (piles->a_count == 0)
 		empty_push(&piles->b, &piles->a);
@@ -69,11 +69,12 @@ void	pa(t_structs *piles)
 		std_push(&piles->b, &piles->a);
 	piles->a_count++;
 	piles->b_count--;
-	ft_printf("pa\n");
+	if (print)
+		ft_printf("pa\n");
 }
 
 /*send the first element of a on top of b*/
-void	pb(t_structs *piles)
+void	pb(t_structs *piles, int print)
 {
 	if (piles->b_count == 0)
 		empty_push(&piles->a, &piles->b);
@@ -83,5 +84,6 @@ void	pb(t_structs *piles)
 		std_push(&piles->a, &piles->b);
 	piles->b_count++;
 	piles->a_count--;
-	ft_printf("pb\n");
+	if (print)
+		ft_printf("pb\n");
 }

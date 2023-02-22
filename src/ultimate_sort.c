@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:26:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/21 18:26:58 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:17:43 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,13 @@ void	place_next(t_structs *piles)
 	}
 }
 
-void	final_sort(t_structs *piles)
+void	final_sort(t_structs *piles, int nb)
 {
-	int	nb;
-	
-	nb = piles->total_count - 1;
 	while (piles->a_count != piles->total_count)
 	{
 		if (piles->b->data == nb)
 		{
-			pa(piles);
+			pa(piles, 1);
 			nb--;
 		}
 		else if (piles->a->prev->data == nb)
@@ -74,9 +71,10 @@ void	final_sort(t_structs *piles)
 			nb--;
 			rra(&piles->a, 1);
 		}
-		else if (piles->b->data > piles->a->prev->data || piles->a->prev->data == piles->total_count)
+		else if (piles->b->data > piles->a->prev->data
+			|| piles->a->prev->data == piles->total_count)
 		{
-			pa(piles);
+			pa(piles, 1);
 			ra(&piles->a, 1);
 		}
 		else
@@ -86,11 +84,23 @@ void	final_sort(t_structs *piles)
 		rra(&piles->a, 1);
 }
 
+static void	empty_a(t_structs *piles)
+{
+	while (piles->a_count != 1 && piles->a->data != piles->total_count)
+	{
+		if (piles->a->data != piles->total_count)
+			pb(piles, 1);
+		else
+			ra(&piles->a, 1);
+	}
+}
+
 void	ultimate_sort(t_structs *piles)
 {
-	int 	i;
+	int	i;
+	int	nb;
 
-	i = 2;
+	i = 1;
 	block_count(piles);
 	piles->block_sizes = piles->total_count / piles->nb_total_block;
 	if (block_alloc(piles))
@@ -102,9 +112,12 @@ void	ultimate_sort(t_structs *piles)
 	while (i <= piles->nb_total_block)
 	{
 		block_sep(piles, i);
-		i = i + 2;
+		i++;
 	}
+	if (piles->a_count != 1 && piles->a->data != piles->total_count)
+		empty_a(piles);
 	ft_free(piles->nb_block_a);
 	ft_free(piles->nb_block_b);
-	final_sort(piles);
+	nb = piles->total_count - 1;
+	final_sort(piles, nb);
 }

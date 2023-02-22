@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:38:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 10:18:54 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:38:21 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	nb_checker(int argc, char **argv)
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = -1;
 	while (++i < argc)
@@ -42,7 +42,7 @@ static int	argv_checker(int argc, char **argv)
 		j = 0;
 		if (argv[i][j] == '-')
 			j++;
-		while(argv[i][j])
+		while (argv[i][j])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 				return (1);
@@ -83,6 +83,6 @@ int	input_error(int argc, char **argv)
 	if (nb_checker(argc, argv))
 		return (1);
 	if (nb_double(argc, argv))
-		return(1);
+		return (1);
 	return (0);
 }

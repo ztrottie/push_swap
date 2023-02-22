@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:09:02 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/16 10:26:22 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:44:16 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	*temp_array(int argc, char **argv)
 {
 	int	*tmp;
 	int	i;
-	
+
 	tmp = (int *)ft_calloc(argc + 1, sizeof(int));
 	if (!tmp)
 		return (NULL);
@@ -73,8 +73,8 @@ int	*temp_array(int argc, char **argv)
 long int	ft_li_atoi(const char *str)
 {
 	long int	nb;
-	int	sign;
-	int	i;
+	int			sign;
+	int			i;
 
 	nb = 0;
 	i = 0;

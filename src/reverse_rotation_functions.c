@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:37:45 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/18 11:35:54 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:58:25 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ void	rrb(t_pile **b, int print)
 }
 
 /*Rotate downwards the piles a and b*/
-void	rrr(t_pile **a, t_pile **b)
+void	rrr(t_pile **a, t_pile **b, int print)
 {
 	rra(a, 0);
 	rrb(b, 0);
-	ft_printf("rrr\n");
+	if (print)
+		ft_printf("rrr\n");
 }
