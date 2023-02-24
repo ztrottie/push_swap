@@ -6,13 +6,13 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:13 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:34:52 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:32:33 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_get_strjoin(char *s1, char *s2)
 {
 	char		*ptr;
 	size_t		len1;
@@ -36,32 +36,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (s1 = ft_free(s1), ptr);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	*ft_bzero(void *p, size_t size)
+void	*ft_get_bzero(void *p, size_t size)
 {
 	while (size--)
 		((char *)p)[size] = 0;
 	return (p);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = (void *)malloc(count * size);
-	if (!ptr)
-		return (0);
-	ft_bzero(ptr, count * size);
-	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 11:37:38 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:36:27 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ int	init_push_swap(int argc, char **argv, t_structs *piles)
 	piles->a = init_a(argc, argv);
 	if (!piles->a)
 		return (1);
-	piles->b = NULL;
 	return (0);
 }

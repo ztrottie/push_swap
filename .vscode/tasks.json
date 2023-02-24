@@ -10,7 +10,7 @@
                 "${workspaceFolder}/src/*.c",
                 "${workspaceFolder}/libft/*.c",
                 "-o",
-                "${workspaceFolder}/push_swap"
+                "${workspaceFolder}/checker"
             ],
             "options": {
                 "cwd": "${fileDirname}"

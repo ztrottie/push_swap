@@ -6,16 +6,14 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:48:33 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 14:27:35 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:25:35 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
+# include <limits.h>
 # include "../libft/libft.h"
 # include <stdio.h>
 
@@ -39,6 +37,7 @@ typedef struct s_structs
 	int		total_count;
 	int		a_count;
 	int		b_count;
+	int		temp;
 	t_com	*commands;
 	t_pile 	*a;
 	t_pile 	*b;
@@ -72,7 +71,7 @@ int			init_push_swap(int argc, char **argv, t_structs *piles);
 /*Pile functions*/
 int			pile_add_end(int data, t_pile **pile);
 void		free_pile(t_pile *pile);
-void		*free_all(t_structs *piles);
+void		*free_all(t_structs *piles, char **argv);
 
 /*Other functions*/
 long int	ft_li_atoi(const char *str);
@@ -83,6 +82,6 @@ size_t		ft_word_count(char const *s, char c);
 char		*get_next_line(int fd);
 
 /*argv convertion*/
-char		**argv_conv(int *argc, char **argv);
+char		**argv_conv(int *argc, char **argv, t_structs *piles);
 
 #endif

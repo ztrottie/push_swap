@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:21:35 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:32:00 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
+# include "push_swap_bonus.h"
 
 char	*get_next_line(int fd);
-void	*ft_calloc(size_t count, size_t size);
-void	*ft_bzero(void *p, size_t size);
-void	*ft_memset(void *b, int c, size_t len);
-void	*ft_free(void *p);
-size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_get_strjoin(char *s1, char *s2);
+void	*ft_get_bzero(void *p, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:08:16 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:21:06 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void		two_sort_a(t_structs *piles);
 void		two_sort_b(t_structs *piles);
 
 /*argv convertion*/
-char		**argv_conv(int *argc, char **argv);
+char		**argv_conv(int *argc, char **argv, t_structs *piles);
 
 /*Pile functions*/
 int			pile_add_end(int data, t_pile **pile);
 void		free_pile(t_pile *pile);
-void		*free_all(t_structs *piles);
+void		*free_all(t_structs *piles, char **argv);
 
 /*Block Manipulation*/
 void		block_sep(t_structs *piles, int block);

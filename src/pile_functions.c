@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:56:32 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 11:38:35 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:42:24 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	free_pile(t_pile *pile)
 	while (ptr->next != pile)
 	{
 		tmp = ptr->next;
-		free(ptr);
+		ft_free(ptr);
 		ptr = tmp;
 	}
-	free(ptr);
+	ft_free(ptr);
 }
 
 int	pile_add_end(int data, t_pile **pile)
@@ -42,12 +42,21 @@ int	pile_add_end(int data, t_pile **pile)
 	return (0);
 }
 
-void	*free_all(t_structs *piles)
+void	*free_all(t_structs *piles, char **argv)
 {
-	if (piles->a)
+	int	i;
+	
+	if (piles->a != NULL)
 		free_pile(piles->a);
-	if (piles->b)
+	if (piles->b != NULL)
 		free_pile(piles->b);
-	free(piles);
+	i = 0;
+	if (piles->temp)
+	{
+		while (argv[i])
+			ft_free((void *)argv[i++]);
+		ft_free((void **)argv);
+	}
+	ft_free(piles);
 	return (NULL);
 }

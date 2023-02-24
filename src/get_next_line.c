@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:00 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:26:47 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:32:13 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ char	*get_next_line(int fd)
 		nbyte = read(fd, buffer, BUFFER_SIZE);
 		if (nbyte == -1)
 			return (buffer = ft_free(buffer), stash = ft_free(stash), NULL);
-		stash = ft_strjoin(stash, buffer);
-		buffer = ft_bzero(buffer, BUFFER_SIZE + 1);
+		stash = ft_get_strjoin(stash, buffer);
+		buffer = ft_get_bzero(buffer, BUFFER_SIZE + 1);
 	}
 	if (nbyte != 0 || ft_find(stash, nbyte) > 0)
 	{
