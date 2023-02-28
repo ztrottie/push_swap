@@ -1,36 +1,41 @@
-NAME		=	push_swap
-NAME2		=	checker
+NAME			=	push_swap
+NAME2			=	checker
 
-INCDIR		=	includes
+INCDIR			=	includes
 
-PUSH_DIR	=	src/push_swap/
-COMMON_DIR	=	src/common/
-BINDIR		=	bin/
+PUSH_DIR		=	src/push_swap/
+COMMON_DIR		=	src/common/
+CHECKER_DIR		=	src/checker/
+BINDIR			=	bin/
 
-LDIR		=	libft/
-LIBFT		=	libft.a
+LDIR			=	libft/
+LIBFT			=	libft.a
 
-PUSH_SRCS	=	push_swap.c \
-				xs_algo.c \
-				ultimate_sort.c \
-				block_manipulation.c \
+PUSH_SRCS		=	push_swap.c \
+					xs_algo.c \
+					ultimate_sort.c \
+					block_manipulation.c \
 
-COMMON_SRCS	=	argv_converter.c \
-				init_push_swap.c \
-				input_error.c \
-				pile_functions.c \
-				push_functions.c \
-				reverse_rotation_functions.c \
-				rotation_functions.c \
-				swap_functions.c \
-				utils.c
+COMMON_SRCS		=	argv_converter.c \
+					init_push_swap.c \
+					input_error.c \
+					pile_functions.c \
+					push_functions.c \
+					reverse_rotation_functions.c \
+					rotation_functions.c \
+					swap_functions.c \
+					utils.c
 
-PUSH_OBJS	=	$(addprefix ${BINDIR}, ${PUSH_SRCS:.c=.o})
+CHECKER_SRCS	=	checker.c
 
-COMMON_OBJS	=	$(addprefix ${BINDIR}, ${COMMON_SRCS:.c=.o})
+PUSH_OBJS		=	$(addprefix ${BINDIR}, ${PUSH_SRCS:.c=.o})
 
-CC		=	gcc
-CFLAGS	=	-Wextra -Werror -Wall
+COMMON_OBJS		=	$(addprefix ${BINDIR}, ${COMMON_SRCS:.c=.o})
+
+CHECKER_OBJS	=	$(addprefix ${BINDIR}, ${CHECKER_SRCS:.c=.o})
+
+CC				=	gcc
+CFLAGS			=	-Wextra -Werror -Wall
 
 all: libft $(BINDIR) $(NAME)
 
@@ -41,6 +46,9 @@ ${BINDIR}%.o: ${PUSH_DIR}%.c
 	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
 ${BINDIR}%.o: ${COMMON_DIR}%.c
+	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
+
+${BINDIR}%.o: ${CHECKER_DIR}%.c
 	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
 $(NAME): $(PUSH_OBJS) $(COMMON_OBJS)
@@ -59,4 +67,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all libft
+bonus: libft $(BINDIR) $(NAME2)
+
+$(NAME2): $(CHECKER_OBJS) $(COMMON_OBJS)
+	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME2)
+
+.PHONY: all libft bonus
