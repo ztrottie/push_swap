@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:56:32 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/24 11:42:24 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:10:02 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	pile_add_end(int data, t_pile **pile)
 void	*free_all(t_structs *piles, char **argv)
 {
 	int	i;
-	
+
 	if (piles->a != NULL)
 		free_pile(piles->a);
 	if (piles->b != NULL)

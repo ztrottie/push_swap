@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:41:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/24 13:29:54 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:10:11 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	**argv_conv(int *argc, char **argv, t_structs *piles)
 {
 	char	**new_argv;
-	
+
 	if (*argc == 2)
 	{
 		*argc = ft_word_count(argv[1], ' ') - 1;

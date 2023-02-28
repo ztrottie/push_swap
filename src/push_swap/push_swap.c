@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:37:34 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/24 14:22:53 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:58:23 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	algo_selection(t_structs *piles)
 	else
 		ultimate_sort(piles);
 }
-/*
+
 int	main(int argc, char **argv)
 {
 	t_structs	*piles;
@@ -44,4 +44,4 @@ int	main(int argc, char **argv)
 	if (sort_checker(&piles->a))
 		algo_selection(piles);
 	return (free_all(piles, new_argv), 0);
-}*/
+}

@@ -75,6 +75,6 @@ visu:
 	@./push_swap_visualizer/build/bin/visualizer
 
 val:
-	@valgrind  --leak-check=full --track-origins=yes --show-leak-kinds=all ./checker "3 2 1"
+	@valgrind  --leak-check=full --track-origins=yes --show-leak-kinds=all ./push_swap 3 2 1
 
 .PHONY: all libft
