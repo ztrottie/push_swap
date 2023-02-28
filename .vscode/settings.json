@@ -3,6 +3,15 @@
 	"files.associations": {
 		"push_swap.h": "c",
 		"push_swap_bonus.h": "c",
-		"common.h": "c"
+		"common.h": "c",
+		"__config": "c",
+		"locale": "c",
+		"fcntl.h": "c",
+		"checker.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c",
+		"vector": "c",
+		"get_next_line.h": "c"
 	}
 }

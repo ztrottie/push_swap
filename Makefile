@@ -26,7 +26,9 @@ COMMON_SRCS		=	argv_converter.c \
 					swap_functions.c \
 					utils.c
 
-CHECKER_SRCS	=	checker.c
+CHECKER_SRCS	=	checker.c \
+					get_next_line_utils.c \
+					get_next_line.c
 
 PUSH_OBJS		=	$(addprefix ${BINDIR}, ${PUSH_SRCS:.c=.o})
 
@@ -63,6 +65,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(NAME2)
 	@$(MAKE) -C $(LDIR) fclean
 
 re: fclean all

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 13:00:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 16:08:35 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/02/28 14:55:29 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
+# include <unistd.h>
+# include <stdlib.h>
 # include "common.h"
-# include <fcntl.h>
 
-typedef struct s_commands
-{
-	char				*data;
-	struct s_commands	*next;
-}	t_commands;
-
-/*functions for the checker*/
 char	*get_next_line(int fd);
+char	*ft_get_strjoin(char *s1, char *s2);
+void	*ft_get_bzero(void *p, size_t size);
 
 #endif
