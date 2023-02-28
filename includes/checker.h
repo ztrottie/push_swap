@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:00:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 16:08:35 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:44:43 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHECKER_H
 
 # include "common.h"
-# include <fcntl.h>
 
 typedef struct s_commands
 {
