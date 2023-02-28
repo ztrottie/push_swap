@@ -6,12 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:52:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:00:34 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:51:31 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-#include <stdio.h>
+#include "../../includes/common.h"
 
 static void	std_swap(t_pile **a)
 {
@@ -32,8 +31,6 @@ static void	std_swap(t_pile **a)
 /*Swap the 2 first elements of the pile a*/
 void	sa(t_pile **a, int count, int print)
 {
-	t_pile	*head;
-
 	if (count > 2)
 		std_swap(a);
 	else
@@ -45,8 +42,6 @@ void	sa(t_pile **a, int count, int print)
 /*Swap the 2 first elements of the pile b*/
 void	sb(t_pile **b, int count, int print)
 {
-	t_pile	*head;
-
 	if (count > 2)
 		std_swap(b);
 	else

@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:09:02 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 11:44:16 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:43:13 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/common.h"
 
 void	*ft_free(void *ptr)
 {

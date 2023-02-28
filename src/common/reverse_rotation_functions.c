@@ -6,12 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:37:45 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 12:58:25 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:43:01 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-#include <stdio.h>
+#include "../../includes/common.h"
 
 /*Rotate downwards the pile a*/
 void	rra(t_pile **a, int print)

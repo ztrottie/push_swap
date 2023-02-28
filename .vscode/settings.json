@@ -2,6 +2,7 @@
 	"C_Cpp.errorSquiggles": "disabled",
 	"files.associations": {
 		"push_swap.h": "c",
-		"push_swap_bonus.h": "c"
+		"push_swap_bonus.h": "c",
+		"common.h": "c"
 	}
 }

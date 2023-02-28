@@ -1,80 +1,62 @@
-NAME	=	push_swap
-BNAME	=	checker
+NAME		=	push_swap
+NAME2		=	checker
 
-SRCDIR	=	src
-BINDIR	=	bin
-LDIR	=	libft/
-LIBFT	=	libft.a
-SRCS = src/push_swap.c \
-	   src/rotation_functions.c \
-	   src/swap_functions.c \
-	   src/reverse_rotation_functions.c \
-	   src/push_functions.c \
-	   src/input_error.c \
-	   src/init_push_swap.c \
-	   src/pile_functions.c \
-	   src/utils.c \
-	   src/xs_algo.c \
-	   src/argv_converter.c \
-	   src/ultimate_sort.c \
-	   src/block_manipulation.c
+INCDIR		=	includes
 
-BSRCS = src/checker.c \
-		src/input_error.c \
-		src/init_push_swap.c \
-		src/pile_functions.c \
-		src/utils.c \
-		src/rotation_functions.c \
-		src/reverse_rotation_functions.c \
-		src/push_functions.c \
-		src/swap_functions.c \
-		src/argv_converter.c \
-		src/get_next_line.c \
-		src/get_next_line_utils.c
+PUSH_DIR	=	src/push_swap/
+COMMON_DIR	=	src/common/
+BINDIR		=	bin/
 
-BOBJS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%.o, $(BSRCS))
+LDIR		=	libft/
+LIBFT		=	libft.a
 
-OBJS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%.o, $(SRCS))
+PUSH_SRCS	=	push_swap.c \
+				xs_algo.c \
+				ultimate_sort.c \
+				block_manipulation.c \
 
+COMMON_SRCS	=	argv_converter.c \
+				init_push_swap.c \
+				input_error.c \
+				pile_functions.c \
+				push_functions.c \
+				reverse_rotation_functions.c \
+				rotation_functions.c \
+				swap_functions.c \
+				utils.c
+
+PUSH_OBJS	=	$(addprefix ${BINDIR}, ${PUSH_SRCS:.c=.o})
+
+COMMON_OBJS	=	$(addprefix ${BINDIR}, ${COMMON_SRCS:.c=.o})
 
 CC		=	gcc
-
 CFLAGS	=	-Wextra -Werror -Wall
-
-RM		= rm -f
 
 all: libft $(BINDIR) $(NAME)
 
 $(BINDIR):
-	@mkdir bin
+	mkdir -p bin
 
-$(BINDIR)/%.o: $(SRCDIR)/%.c
-	@$(CC) -c $< -o $@
+${BINDIR}%.o: ${PUSH_DIR}%.c
+	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(LDIR)$(LIBFT) -o $(NAME)
+${BINDIR}%.o: ${COMMON_DIR}%.c
+	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
+
+$(NAME): $(PUSH_OBJS) $(COMMON_OBJS)
+	$(CC) $(CFLAGS) $(PUSH_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME)
 
 libft:
 	@$(MAKE) -C $(LDIR)
 
 clean:
-	@$(RM) $(OBJS)
-	@$(RM)r $(BINDIR)
+	rm -fr $(BINDIR)
 	@$(MAKE) -C $(LDIR) clean
 
 fclean: clean
-	@$(RM) $(NAME)
+	rm -f $(NAME)
 	@$(MAKE) -C $(LDIR) fclean
 
 re: fclean all
-
-bonus: $(BINDIR) $(BOBJS) libft 
-	$(CC) $(CFLAGS) $(BOBJS) $(LDIR)$(LIBFT) -o $(BNAME)
-
-visu:
-	@./push_swap_visualizer/build/bin/visualizer
-
-val:
-	@valgrind  --leak-check=full --track-origins=yes --show-leak-kinds=all ./push_swap 3 2 1
 
 .PHONY: all libft

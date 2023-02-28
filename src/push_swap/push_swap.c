@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:37:34 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 10:58:23 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:43:48 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	algo_selection(t_structs *piles)
 {

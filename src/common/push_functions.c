@@ -6,12 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:01:13 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:42:55 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-#include <stdio.h>
+#include "../../includes/common.h"
 
 static void	std_push(t_pile **a, t_pile **b)
 {

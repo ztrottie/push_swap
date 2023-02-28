@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:57:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/24 13:36:27 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:42:38 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/common.h"
 
 static int	index_nb(int *array, int index, int len)
 {

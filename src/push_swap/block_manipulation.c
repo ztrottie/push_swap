@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 10:04:06 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/22 13:03:34 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:43:44 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	block_sep(t_structs *piles, int block)
 {

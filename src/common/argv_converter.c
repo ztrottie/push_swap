@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:41:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 11:10:11 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:42:29 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/common.h"
 
 char	**argv_conv(int *argc, char **argv, t_structs *piles)
 {

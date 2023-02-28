@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:26:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/24 10:15:17 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:43:52 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	find_next(t_structs *piles)
 {
