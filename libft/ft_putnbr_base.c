@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 10:31:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/12/14 14:12:32 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:11:44 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int	ft_putnbr_base(unsigned int nbr, char maj)
 {
 	unsigned int	nb;
 	char			*hexa;
-	int				i;
 
-	i = 0;
 	if (maj == 'X')
 		hexa = "0123456789ABCDEF";
 	else

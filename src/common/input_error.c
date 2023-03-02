@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:38:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 12:42:43 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:28:31 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	argv_checker(int argc, char **argv)
 	while (++i < argc)
 	{
 		j = 0;
-		if (argv[i][j] == '-')
+		if (argv[i][j] == '-' && argv[i][j + 1] != 0)
 			j++;
 		while (argv[i][j])
 		{

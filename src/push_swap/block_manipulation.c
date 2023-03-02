@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 10:04:06 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 12:43:44 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:12:33 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ void	block_count(t_structs *piles)
 
 int	block_alloc(t_structs *piles)
 {
-	t_pile	*ptr;
-
-	ptr = piles->a;
 	piles->nb_block_a = ft_calloc(piles->nb_total_block + 1, sizeof(int));
 	piles->nb_block_b = ft_calloc(piles->nb_total_block + 1, sizeof(int));
 	if (!piles->nb_block_a || !piles->nb_block_b)
