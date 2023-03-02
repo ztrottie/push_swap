@@ -76,4 +76,4 @@ bonus: libft $(BINDIR) $(NAME2)
 $(NAME2): $(CHECKER_OBJS) $(COMMON_OBJS)
 	$(CC) $(CFLAGS) -g $(CHECKER_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME2)
 
-.PHONY: all libft bonus visu
+.PHONY: all libft bonus
