@@ -28,7 +28,8 @@ COMMON_SRCS		=	argv_converter.c \
 
 CHECKER_SRCS	=	checker.c \
 					get_next_line_utils.c \
-					get_next_line.c
+					get_next_line.c \
+					operations.c
 
 PUSH_OBJS		=	$(addprefix ${BINDIR}, ${PUSH_SRCS:.c=.o})
 

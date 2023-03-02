@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 12:38:55 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 12:43:26 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:03:50 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_pile
 {
 	int				data;
 	int				block;
-	struct s_pile*	prev;
-	struct s_pile*	next;
+	struct s_pile	*prev;
+	struct s_pile	*next;
 }	t_pile;
 
 /*structure of everything needed*/
@@ -37,8 +37,8 @@ typedef struct s_structs
 	int		*nb_block_b;
 	int		nb_total_block;
 	int		temp;
-	t_pile 	*a;
-	t_pile 	*b;
+	t_pile	*a;
+	t_pile	*b;
 }	t_structs;
 
 /*Swap functions*/

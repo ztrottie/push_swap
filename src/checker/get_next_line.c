@@ -6,13 +6,13 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:00 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/01 21:35:48 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:01:52 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/get_next_line.h"
+#include "get_next_line.h"
 
-static size_t	ft_find(char *stash, ssize_t nbyte)
+size_t	ft_find(char *stash, ssize_t nbyte)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ static size_t	ft_find(char *stash, ssize_t nbyte)
 	return (0);
 }
 
-static char	*ft_clean_stash(char *stash, char *line)
+char	*ft_clean_stash(char *stash, char *line)
 {
 	char	*new_stash;
 	size_t	len_line;
@@ -49,7 +49,7 @@ static char	*ft_clean_stash(char *stash, char *line)
 	return (stash = ft_free(stash), new_stash);
 }
 
-static char	*ft_make_line(char *stash, ssize_t nbyte)
+char	*ft_make_line(char *stash, ssize_t nbyte)
 {
 	char	*line;
 	size_t	len;
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 		nbyte = read(fd, buffer, BUFFER_SIZE);
 		if (nbyte == -1)
 			return (buffer = ft_free(buffer), stash = ft_free(stash), NULL);
-		stash = ft_strjoin(stash, buffer);
+		stash = ft_get_strjoin(stash, buffer);
 		buffer = ft_get_bzero(buffer, BUFFER_SIZE + 1);
 	}
 	if (nbyte != 0 || ft_find(stash, nbyte) > 0)

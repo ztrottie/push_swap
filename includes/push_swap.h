@@ -6,14 +6,14 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 12:32:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 12:41:57 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:04:03 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "common.h"
+# include "common.h"
 
 /*type of algos*/
 void		xs_algo(t_structs *piles);
