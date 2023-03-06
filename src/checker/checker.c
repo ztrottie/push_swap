@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/06 11:19:13 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:18:45 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ static void	get_commands(t_structs *piles)
 	char		*str;
 	t_commands	*commands;
 
-	commands = ft_calloc(1, sizeof(t_commands));
-	commands->data = get_next_line(0);
-	commands->next = NULL;
+	commands = 0;
 	str = get_next_line(0);
 	while (str != NULL)
 	{
