@@ -6,13 +6,12 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/01 23:02:15 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:19:13 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/checker.h"
 #include <unistd.h>
-#include <fcntl.h>
 
 static void	*free_commands(t_commands *commands)
 {

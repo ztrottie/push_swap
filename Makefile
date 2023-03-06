@@ -71,9 +71,12 @@ fclean: clean
 
 re: fclean all
 
+visu:
+	./push_swap_visualizer/build/bin/visualizer
+
 bonus: libft $(BINDIR) $(NAME2)
 
 $(NAME2): $(CHECKER_OBJS) $(COMMON_OBJS)
-	$(CC) $(CFLAGS) -g $(CHECKER_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME2)
+	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME2)
 
 .PHONY: all libft bonus
