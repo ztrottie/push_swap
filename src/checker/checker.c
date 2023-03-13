@@ -6,12 +6,13 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/06 12:18:45 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:21:03 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/checker.h"
 #include <unistd.h>
+#include <fcntl.h>
 
 static void	*free_commands(t_commands *commands)
 {
@@ -50,39 +51,49 @@ static void	add_commands_end(t_commands **commands, char *str)
 	ptr->next = new;
 }
 
-static void	do_op(t_commands *commands, t_structs *piles)
+static int	do_op(t_commands *commands, t_structs *piles)
 {
 	t_commands	*ptr;
+	int			error;
 
 	ptr = commands;
+	error = 0;
 	while (ptr != NULL)
 	{
 		if (ft_strncmp(ptr->data, "rr", 2) == 0)
-			reverse_rotation_operation(ptr->data, piles);
+			error = reverse_rotation_operation(ptr->data, piles);
 		else if (ft_strncmp(ptr->data, "r", 1) == 0)
-			rotation_operation(ptr->data, piles);
+			error = rotation_operation(ptr->data, piles);
 		else if (ft_strncmp(ptr->data, "s", 1) == 0)
-			swap_operation(ptr->data, piles);
+			error = swap_operation(ptr->data, piles);
 		else if (ft_strncmp(ptr->data, "p", 1) == 0)
-			push_operation(ptr->data, piles);
+			error = push_operation(ptr->data, piles);
+		else
+			return (1);
+		if (error == 1)
+			return (1);
 		ptr = ptr->next;
 	}
+	return (0);
 }
 
-static void	get_commands(t_structs *piles)
+static int	get_commands(t_structs *piles)
 {
 	char		*str;
 	t_commands	*commands;
+	int			fd;
 
 	commands = 0;
-	str = get_next_line(0);
+	fd = open("text.txt", O_RDONLY);
+	str = get_next_line(fd);
 	while (str != NULL)
 	{
 		add_commands_end(&commands, str);
-		str = get_next_line(0);
+		str = get_next_line(fd);
 	}
-	do_op(commands, piles);
-	free_commands(commands);
+	if (do_op(commands, piles))
+		return (ft_putstr_fd("Error\n", 2), free_commands(commands), 1);
+	return (free_commands(commands), 0);
 }
 
 int	main(int argc, char **argv)
@@ -104,10 +115,12 @@ int	main(int argc, char **argv)
 	piles->a_count = argc;
 	if (init_push_swap(argc, new_argv, piles))
 		return (ft_putstr_fd("Error\n", 2), free_all(piles, new_argv), 0);
-	get_commands(piles);
-	if (sort_checker(&piles->a) == 0 && piles->b_count == 0)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+	if (get_commands(piles) == 0)
+	{
+		if (sort_checker(&piles->a) == 0 && piles->b_count == 0)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
+	}
 	return (free_all(piles, new_argv), 0);
 }

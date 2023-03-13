@@ -6,11 +6,11 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:00 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/01 23:01:52 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:29:55 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../includes/get_next_line.h"
 
 size_t	ft_find(char *stash, ssize_t nbyte)
 {
