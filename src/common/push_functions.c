@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/02/28 12:42:55 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:37:17 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ static void	last_push(t_pile **a, t_pile **b)
 /*send the first element of b on top of a*/
 void	pa(t_structs *piles, int print)
 {
+	if (!piles->b)
+		return ;
 	if (piles->a_count == 0)
 		empty_push(&piles->b, &piles->a);
 	else if (piles->b_count == 1)
@@ -75,6 +77,8 @@ void	pa(t_structs *piles, int print)
 /*send the first element of a on top of b*/
 void	pb(t_structs *piles, int print)
 {
+	if (!piles->a)
+		return ;
 	if (piles->b_count == 0)
 		empty_push(&piles->a, &piles->b);
 	else if (piles->a_count == 1)

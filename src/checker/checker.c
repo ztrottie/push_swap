@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/13 15:21:03 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:38:44 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,13 @@ static int	get_commands(t_structs *piles)
 {
 	char		*str;
 	t_commands	*commands;
-	int			fd;
 
 	commands = 0;
-	fd = open("text.txt", O_RDONLY);
-	str = get_next_line(fd);
+	str = get_next_line(0);
 	while (str != NULL)
 	{
 		add_commands_end(&commands, str);
-		str = get_next_line(fd);
+		str = get_next_line(0);
 	}
 	if (do_op(commands, piles))
 		return (ft_putstr_fd("Error\n", 2), free_commands(commands), 1);
