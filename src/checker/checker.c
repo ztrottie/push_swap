@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/17 12:38:44 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/18 11:56:26 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ static int	do_op(t_commands *commands, t_structs *piles)
 	error = 0;
 	while (ptr != NULL)
 	{
-		if (ft_strncmp(ptr->data, "rr", 2) == 0)
+		if (ft_strncmp(ptr->data, "rr\n", 3) == 0)
+			rr(&piles->a, &piles->b, 0);
+		else if (ft_strncmp(ptr->data, "rr", 2) == 0)
 			error = reverse_rotation_operation(ptr->data, piles);
 		else if (ft_strncmp(ptr->data, "r", 1) == 0)
 			error = rotation_operation(ptr->data, piles);

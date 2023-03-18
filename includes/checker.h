@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:00:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:39:51 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/18 11:55:51 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ typedef struct s_commands
 char	*get_next_line(int fd);
 
 /*commands selection functions*/
-int	rotation_operation(char *command, t_structs *piles);
-int	reverse_rotation_operation(char *command, t_structs *piles);
-int	swap_operation(char *command, t_structs *piles);
-int	push_operation(char *command, t_structs *piles);
+int		rotation_operation(char *command, t_structs *piles);
+int		reverse_rotation_operation(char *command, t_structs *piles);
+int		swap_operation(char *command, t_structs *piles);
+int		push_operation(char *command, t_structs *piles);
 
 #endif

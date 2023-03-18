@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 21:39:09 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:39:34 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/18 11:55:14 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ int	rotation_operation(char *command, t_structs *piles)
 		ra(&piles->a, 0);
 	else if (ft_strncmp(command, "rb\n", 3) == 0)
 		rb(&piles->b, 0);
-	else if (ft_strncmp(command, "rr\n", 3) == 0)
-		rr(&piles->a, &piles->b, 0);
 	else
 		return (1);
-	return(0);
+	return (0);
 }
 
 int	reverse_rotation_operation(char *command, t_structs *piles)
@@ -33,9 +31,7 @@ int	reverse_rotation_operation(char *command, t_structs *piles)
 		rrb(&piles->b, 0);
 	else if (ft_strncmp(command, "rrr\n", 4) == 0)
 		rrr(&piles->a, &piles->b, 0);
-	else
-		return (1);
-	return(0);
+	return (0);
 }
 
 int	swap_operation(char *command, t_structs *piles)
@@ -48,7 +44,7 @@ int	swap_operation(char *command, t_structs *piles)
 		ss(piles, 0);
 	else
 		return (1);
-	return(0);
+	return (0);
 }
 
 int	push_operation(char *command, t_structs *piles)
@@ -59,5 +55,5 @@ int	push_operation(char *command, t_structs *piles)
 		pb(piles, 0);
 	else
 		return (1);
-	return(0);
+	return (0);
 }
