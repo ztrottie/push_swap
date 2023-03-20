@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:02:12 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/18 11:56:26 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:48:43 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,11 @@ int	main(int argc, char **argv)
 	t_structs	*piles;
 	char		**new_argv;
 
+	if (argc == 1)
+		return (0);
 	piles = (t_structs *)ft_calloc(1, sizeof(t_structs));
 	if (!piles)
 		return (ft_putstr_fd("Error\n", 2), 0);
-	if (argc == 1)
-		return (0);
 	new_argv = argv_conv(&argc, argv, piles);
 	if (!new_argv)
 		return (ft_putstr_fd("Error\n", 2), free_all(piles, new_argv), 0);
