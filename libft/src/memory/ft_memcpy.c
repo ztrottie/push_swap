@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/10/26 11:18:30 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 10:53:42 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/memory.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = *(unsigned char *)(src + i);
+		i++;
+	}
+	return (dst);
+}

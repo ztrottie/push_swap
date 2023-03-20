@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/03 21:09:16 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:19:06 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <unistd.h>
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+/*
+int	main(void)
+{
+	printf("%d", ft_strncmp("test", "teste", 10));
+}*/

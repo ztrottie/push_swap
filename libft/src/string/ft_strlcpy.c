@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/01 16:45:01 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:17:46 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/string.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!dst || !src)
+		return (0);
+	if (dstsize != 0)
+	{
+		while (i < dstsize - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
+	}
+	return (ft_strlen(src));
+}

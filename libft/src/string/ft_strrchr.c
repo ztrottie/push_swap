@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/03 20:26:42 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:19:41 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/string.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
 
-#endif
+	if (!s)
+		return (0);
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (const char)c)
+			return ((char *)s + i);
+		i--;
+	}
+	return (0);
+}

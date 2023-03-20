@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/17 15:13:18 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 10:42:00 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/list.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*end;
 
-#endif
+	if (!*lst || !new)
+		*lst = new;
+	else
+	{
+		end = ft_lstlast(*lst);
+		end->next = new;
+	}
+}

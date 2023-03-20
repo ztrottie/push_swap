@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/03 17:16:35 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:14:47 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
-
-#endif
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i] != (const char)c && s[i])
+		i++;
+	if ((const char)c == s[i])
+		return ((char *)s + i);
+	return (0);
+}
+/*
+int	main(void)
+{
+	char s[] = "tripouille";
+	printf("%s\n", ft_strchr(s, 't' + 257));
+	printf("%s\n", strchr(s, 't' + 257));
+}*/

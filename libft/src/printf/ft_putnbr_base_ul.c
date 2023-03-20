@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_base_ul.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:03 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/23 13:45:05 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/07 09:44:37 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/ft_printf.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+int	ft_putnbr_base_ul(unsigned long nbr)
+{
+	unsigned long	nb;
+	char			*hexa;
 
-#endif
+	hexa = "0123456789abcdef";
+	nb = nbr;
+	if (nb / 16 != 0)
+		ft_putnbr_base_ul((nb / 16));
+	ft_putchar_fd(hexa[nb % 16], 1);
+	return (ft_hexa_len(nbr));
+}
