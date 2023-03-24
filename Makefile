@@ -73,6 +73,9 @@ re: fclean all
 
 bonus: libft $(BINDIR) $(NAME2)
 
+visudown:
+	git clone https://github.com/o-reo/push_swap_visualizer.git && cd push_swap_visualizer && mkdir build && cd build && cmake .. && make
+
 visu:
 	./push_swap_visualizer/build/bin/visualizer
 
