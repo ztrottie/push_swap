@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 12:38:55 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/01 23:03:50 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:13:29 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
+# include "../C_tools/C_tool.h"
 
 /*double linked list of my values*/
 typedef struct s_pile

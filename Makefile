@@ -55,7 +55,7 @@ ${BINDIR}%.o: ${CHECKER_DIR}%.c
 	${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
 $(NAME): $(PUSH_OBJS) $(COMMON_OBJS)
-	$(CC) $(CFLAGS) $(PUSH_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(PUSH_OBJS) $(COMMON_OBJS) $(LDIR)$(LIBFT) C_tools/C_tool.a -o $(NAME)
 
 libft:
 	@$(MAKE) -C $(LDIR)

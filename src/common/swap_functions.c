@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 14:52:31 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/17 12:34:19 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:16:18 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void	std_swap(t_pile **a)
 /*Swap the 2 first elements of the pile a*/
 void	sa(t_pile **a, int count, int print)
 {
+	Ct_make_flag("sa", 1);
 	if (!*a)
 		return ;
 	if (count > 2)
@@ -44,6 +45,7 @@ void	sa(t_pile **a, int count, int print)
 /*Swap the 2 first elements of the pile b*/
 void	sb(t_pile **b, int count, int print)
 {
+	Ct_make_flag("sb", 1);
 	if (!*b)
 		return ;
 	if (count > 2)
@@ -57,6 +59,7 @@ void	sb(t_pile **b, int count, int print)
 /*Swap the 2 first elements of the piles a and b*/
 void	ss(t_structs *piles, int print)
 {
+	Ct_make_flag("ss", 1);
 	if (!piles->a || !piles->b)
 		return ;
 	sa(&piles->a, piles->a_count, 0);

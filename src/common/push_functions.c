@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:52:42 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/17 12:37:17 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:14:39 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	last_push(t_pile **a, t_pile **b)
 /*send the first element of b on top of a*/
 void	pa(t_structs *piles, int print)
 {
+	Ct_make_flag("pa", 1);
 	if (!piles->b)
 		return ;
 	if (piles->a_count == 0)
@@ -77,6 +78,7 @@ void	pa(t_structs *piles, int print)
 /*send the first element of a on top of b*/
 void	pb(t_structs *piles, int print)
 {
+	Ct_make_flag("pb", 1);
 	if (!piles->a)
 		return ;
 	if (piles->b_count == 0)

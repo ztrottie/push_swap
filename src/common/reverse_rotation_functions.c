@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotation_functions.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:37:45 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/17 12:35:49 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:15:14 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*Rotate downwards the pile a*/
 void	rra(t_pile **a, int print)
 {
+	Ct_make_flag("rra", 1);
 	if (!*a)
 		return ;
 	*a = (*a)->prev;
@@ -25,6 +26,7 @@ void	rra(t_pile **a, int print)
 /*Rotate downwards the pile b*/
 void	rrb(t_pile **b, int print)
 {
+	Ct_make_flag("rrb", 1);
 	if (!*b)
 		return ;
 	*b = (*b)->prev;
@@ -35,6 +37,7 @@ void	rrb(t_pile **b, int print)
 /*Rotate downwards the piles a and b*/
 void	rrr(t_pile **a, t_pile **b, int print)
 {
+	Ct_make_flag("rrr", 1);
 	if (!*a || !*b)
 		return ;
 	rra(a, 0);
